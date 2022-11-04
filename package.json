@@ -2,7 +2,7 @@
     "name": "adonis-rabbitmq",
     "version": "0.0.1",
     "description": "Rabbit-Mq addon for AdonisJs",
-    "homepage": "https://github.com/Small6oy/adonis-rabbitmq",
+    "homepage": "https://github.com/Small6oy/adonis-rabbitmq#readme",
     "bugs": {
         "url": "https://github.com/Small6oy/adonis-rabbitmq/issues"
     },
