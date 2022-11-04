@@ -1,51 +1,50 @@
 const safeStringify = require('./utils')
 
 class Message {
-
-    constructor(channel, message) {
-        if (message === null) {
-            throw { message: 'Message expected, received null.' }
-        }
-
-        this.message = message
-        this.channel = channel
+  constructor (channel, message) {
+    if (message === null) {
+      throw { message: 'Message expected, received null.' }
     }
 
-    ack(allUpTo = false) {
-        this.channel.ack(this.message, allUpTo)
-    }
+    this.message = message
+    this.channel = channel
+  }
 
-    nack(allUpTo = false, requeue = true) {
-        this.channel.nack(this.message, allUpTo, requeue)
-    }
+  ack (allUpTo = false) {
+    this.channel.ack(this.message, allUpTo)
+  }
 
-    reject(requeue = true) {
-        this.channel.reject(this.message, requeue)
-    }
+  nack (allUpTo = false, requeue = true) {
+    this.channel.nack(this.message, allUpTo, requeue)
+  }
 
-    handleError(queue, payload, error) {
-        this.channel.assertQueue('exceptions')
-        this.channel.sendToQueue('exceptions', this.toBuffer({ queue, payload, created_at: (new Date()).getTime(), error }))
-    }
+  reject (requeue = true) {
+    this.channel.reject(this.message, requeue)
+  }
 
-    getContent() {
-        return JSON.parse(this.message.content.toString())
-    }
+  handleError (queue, payload, error) {
+    this.channel.assertQueue('exceptions')
+    this.channel.sendToQueue('exceptions', this.toBuffer({ queue, payload, created_at: (new Date()).getTime(), error }))
+  }
 
-    getFields() {
-        return this.message.fields
-    }
+  getContent () {
+    return JSON.parse(this.message.content.toString())
+  }
 
-    getProperties() {
-        return this.message.properties
-    }
+  getFields () {
+    return this.message.fields
+  }
 
-    toBuffer(content) {
-        return Buffer.isBuffer(content)
+  getProperties () {
+    return this.message.properties
+  }
+
+  toBuffer (content) {
+    return Buffer.isBuffer(content)
             ? content
             : Buffer.from(
                 typeof content === 'object' ? safeStringify(content) : content
             )
-    }
+  }
 }
 module.exports = Message

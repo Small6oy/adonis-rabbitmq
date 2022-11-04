@@ -1,7 +1,7 @@
 const { ServiceProvider } = require('@adonisjs/fold')
 
 class Provider extends ServiceProvider {
-  register() {
+  register () {
     this.app.singleton('RabbitMQ', () => {
       const Config = this.app.use('Adonis/Src/Config')
       const RabbitMQ = require('../src')
@@ -9,7 +9,7 @@ class Provider extends ServiceProvider {
     })
   }
 
-  boot() {
+  boot () {
     const rabbitMq = this.app.use('RabbitMQ')
     rabbitMq.run()
   }

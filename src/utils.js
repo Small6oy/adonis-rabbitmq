@@ -1,14 +1,14 @@
 const fastSafeStringify = require('fast-safe-stringify')
 
-function replacer(_, value) {
-    if (value === '[Circular]') {
-        return
-    }
+function replacer (_, value) {
+  if (value === '[Circular]') {
+    return
+  }
 
-    return value
+  return value
 }
 
-function safeStringify(value) {
-    return fastSafeStringify(value, replacer)
+function safeStringify (value) {
+  return fastSafeStringify(value, replacer)
 }
 module.exports = safeStringify
