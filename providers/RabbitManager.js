@@ -5,8 +5,8 @@ const RabbitConnection = require('./RabbitConnection')
 class RabbitManager {
 
     constructor(Config) {
-        const settings = Config.get('rabbitMQ');
-        if (!settings) throw new Error(`missing rabbitMQ config file`);
+        const settings = Config.get('rabbitmq');
+        if (!settings) throw new Error(`missing rabbitmq config file`);
     
         const { environment, enabled } = settings
     

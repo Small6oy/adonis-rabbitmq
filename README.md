@@ -13,7 +13,7 @@ const providers = [
 ];
 ```
 
-In the main directory add `rabbitmq.js` and copy
+In the config directory add `rabbitmq.js` and copy
 
 ```js
 /** @type {import('@adonisjs/framework/src/Env')} */
