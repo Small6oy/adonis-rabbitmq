@@ -10,14 +10,15 @@ const RabbitManager = require('./RabbitManager')
 const _consumersFolder = path.normalize(path.join(Helpers.appRoot(), 'app', 'Consumers'))
 
 class RabbitMQ extends RabbitManager {
-  async run () {
+  
+  async run() {
     if (!fs.existsSync(_consumersFolder)) return
 
     const consumerFiles = fs.readdirSync(_consumersFolder)
     const files = consumerFiles.filter(file => path.extname(file) === '.js')
 
     for (const file of files) {
-            // Get instance of consumer controller class
+      // Get instance of consumer controller class
       const filePath = path.join(_consumersFolder, file)
       const consumer = require(filePath)
       const consumerInstance = new consumer()
@@ -26,12 +27,12 @@ class RabbitMQ extends RabbitManager {
     }
   }
 
-  async _handleConsumer (consumer, consumerInstance) {
-        // Every consumer must expose a channel
+  async _handleConsumer(consumer, consumerInstance) {
+    // Every consumer must expose a channel
     if (!('channel' in consumer)) throw { message: 'Missing Static Channel Name' }
     if (!('receive' in consumerInstance)) throw { message: 'Missing Receive Handler Function' }
 
-        // Register task handler
+    // Register task handler
     const { exchange = null, maxPriority = null, consumers = 1 } = consumer
     const options = { exchange, maxPriority }
     const queueName = consumer.channel

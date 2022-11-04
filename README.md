@@ -21,7 +21,7 @@ Add new relic provider in the top of providers list.
 // app/start.js
 
 const providers = [
-  `@small6oy/adonis-rabbitmq/providers/RabbitMqProvider`
+  `adonis-rabbitmq/providers/RabbitMqProvider`
   // ...
 ];
 ```
@@ -41,15 +41,6 @@ exports.config = {
    * application name.
    */
   app_name: Env.get("APP_NAME"),
-
-  /**
-   * Rabbit MQ HOST DETAILS.
-   */
-  host: Env.get('RABBITMQ_HOST'),
-  port: Env.get('RABBITMQ_PORT'),
-  username: Env.get('RABBITMQ_USERNAME'),
-  password: Env.get('RABBITMQ_PASSWORD'),
-
   /**
    * Disable Rabbit MQ.
    */
@@ -61,6 +52,14 @@ exports.config = {
    * production applications.
    */
   level: Env.get('RABBITMQ_LOG_LEVEL', 'info'),
+
+  /**
+   * Rabbit MQ HOST DETAILS.
+   */
+  host: Env.get('RABBITMQ_HOST'),
+  port: Env.get('RABBITMQ_PORT'),
+  username: Env.get('RABBITMQ_USERNAME'),
+  password: Env.get('RABBITMQ_PASSWORD'),
 
 };
 ```
