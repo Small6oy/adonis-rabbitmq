@@ -19,8 +19,7 @@
     },
     "scripts": {
         "lint": "standard src/** providers/** --fix",
-        "pretest": "npm run lint",
-        "test": "japa"
+        "pretest": "npm run lint"
     },
     "repository": {
         "type": "git",
@@ -31,9 +30,6 @@
         "fast-safe-stringify": "^2.1.1"
     },
     "devDependencies": {
-        "@adonisjs/sink": "^1.0.13",
-        "japa": "^1.0.5",
-        "japa-cli": "^1.0.1",
         "standard": "^10.0.3"
     }
 }
