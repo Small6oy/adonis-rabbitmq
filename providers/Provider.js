@@ -4,7 +4,7 @@ class Provider extends ServiceProvider {
   register() {
     this.app.singleton('RabbitMQ', () => {
       const Config = this.app.use('Adonis/Src/Config')
-      const RabbitMQ = require('./index')
+      const RabbitMQ = require('../src')
       return new RabbitMQ(Config)
     })
   }

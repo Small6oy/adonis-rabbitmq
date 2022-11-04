@@ -2,17 +2,17 @@
     "name": "adonis-rabbitmq",
     "version": "0.0.1",
     "description": "Rabbit-Mq addon for AdonisJs",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Small6oy/adonis-rabbitmq"
+    "homepage": "https://github.com/Small6oy/adonis-rabbitmq",
+    "bugs": {
+        "url": "https://github.com/Small6oy/adonis-rabbitmq/issues"
     },
     "keywords": [
         "adonisjs",
         "adonis-framework",
         "rabbitmq",
-        "amqbilb"
+        "amqp"
     ],
+    "license": "MIT",
     "author": {
         "name": "Godwin Ndlovu",
         "email": "gggndlovu@gmail.com"
@@ -21,6 +21,10 @@
         "lint": "standard src/** providers/** --fix",
         "pretest": "npm run lint",
         "test": "japa"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Small6oy/adonis-rabbitmq"
     },
     "dependencies": {
         "amqplib": "^0.8.0",
