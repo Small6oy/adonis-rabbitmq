@@ -5,6 +5,7 @@ const amqp = require('amqplib/callback_api')
 const max_retries = 10
 
 class RabbitConnection {
+
   constructor (config) {
     const { username, password, host, port } = config
     this.credentials = this.handleCredentials(username, password)

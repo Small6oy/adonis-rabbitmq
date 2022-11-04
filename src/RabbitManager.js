@@ -1,3 +1,4 @@
+const log = use('Logger')
 const Message = require('./Message')
 const safeStringify = require('./utils')
 const RabbitConnection = require('./RabbitConnection')
@@ -14,7 +15,7 @@ class RabbitManager {
     if (!this.enabled) { console.warn('Rabbit-MQ Disabled'); return }
 
     const { level } = settings
-    console.warn(`Log Level Set to ${level}`)
+    log.warn(`Log Level Set to ${level}`)
 
     const { host, port, username, password } = settings
     this.rabbitConnection = new RabbitConnection({ host, port, username, password })

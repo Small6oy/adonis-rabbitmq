@@ -4,7 +4,7 @@ Make sure you register the provider inside `start/app.js` file before making use
 
 ```js
 const providers = [
-  `@small6oy/adonis-rabbitmq/providers/RabbitMqProvider`
+  `adonis-rabbitmq/providers/RabbitMqProvider`
 ]
 ```
 
