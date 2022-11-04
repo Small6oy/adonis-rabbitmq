@@ -21,7 +21,7 @@ Add new relic provider in the top of providers list.
 // app/start.js
 
 const providers = [
-  `@small6oy/adonis-rabbitmq/providers/Provider`
+  `@small6oy/adonis-rabbitmq/providers/RabbitMqProvider`
   // ...
 ];
 ```
