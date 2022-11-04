@@ -1,0 +1,37 @@
+{
+    "name": "adonis-rabbitmq",
+    "version": "0.0.1",
+    "description": "Rabbit-Mq addon for AdonisJs",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/justmoon/node-bignum.git"
+    },
+    "keywords": [
+        "adonisjs",
+        "adonis-framework",
+        "rabbitmq",
+        "amqbilb"
+    ],
+    "private": false,
+    "scripts": {
+        "lint": "standard src/** providers/** --fix",
+        "pretest": "npm run lint",
+        "test": "japa"
+    },
+    "author": {
+        "name": "Godwin Ndlovu",
+        "email": "gggndlovu@gmail.com"
+    },
+    "license": "",
+    "devDependencies": {
+        "@adonisjs/sink": "^1.0.13",
+        "japa": "^1.0.5",
+        "japa-cli": "^1.0.1",
+        "standard": "^10.0.3"
+    },
+    "dependencies": {
+        "lodash": "^4.17.15",
+        "newrelic": "^5.11.0"
+    }
+}
